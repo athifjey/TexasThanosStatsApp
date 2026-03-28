@@ -1,0 +1,78 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [
+				"$tsc-watch",
+				"$ts-checker-webpack-watch"
+			],
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "npm",
+			"script": "watch",
+			"problemMatcher": [
+				"$tsc-watch",
+				"$ts-checker-webpack-watch"
+			],
+			"isBackground": true,
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "compile",
+			"problemMatcher": [
+				"$tsc",
+				"$ts-checker-webpack"
+			],
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "build:pages",
+			"group": "build"
+		},
+		{
+			"type": "npm",
+			"script": "run:browser",
+			"isBackground": true,
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"label": "build pages local",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build:pages"
+			],
+			"isBackground": false,
+			"group": "build"
+		},
+		{
+			"label": "run browser local",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"run:browser"
+			],
+			"isBackground": true,
+			"group": "build"
+		}
+	]
+}

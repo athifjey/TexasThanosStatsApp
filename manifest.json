@@ -1,0 +1,24 @@
+{
+  "name": "Texas Thanos Stats",
+  "short_name": "Thanos Stats",
+  "description": "Texas Thanos Cricket Club – Team Statistics",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a2419",
+  "theme_color": "#1a3a2a",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "./assets/texas-thanos-logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/texas-thanos-logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
