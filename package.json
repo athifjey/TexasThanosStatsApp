@@ -2,7 +2,7 @@
 	"name": "texas-thanos-stats-app",
 	"displayName": "Texas Thanos Stats",
 	"description": "Notebook renderer and browser app for Texas Thanos cricket team statistics.",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"private": true,
 	"license": "MIT",
 	"engines": {
