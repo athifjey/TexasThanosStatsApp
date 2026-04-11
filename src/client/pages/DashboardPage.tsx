@@ -143,6 +143,8 @@ const ChartCard: React.FC<ChartConfig> = ({ title, accentClass, valueFormatter, 
 	);
 };
 
+const APP_VERSION = __APP_VERSION__;
+
 export const DashboardPage: React.FC = () => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [battingRows, setBattingRows] = useState<SheetRow[]>([]);
@@ -238,6 +240,7 @@ export const DashboardPage: React.FC = () => {
 			{error && <div className="page__state page__state--error">{error}</div>}
 
 			{!loading && !error && (
+				<>
 				<div className="dashboard-grid">
 					<ChartCard
 						title="Top 5 Wicket Takers (min 10 matches)"
@@ -264,6 +267,11 @@ export const DashboardPage: React.FC = () => {
 						rows={charts.topEconomy}
 					/>
 				</div>
+				<footer className="dashboard-footer" aria-label="Application information">
+					<span className="dashboard-footer__item">Version: {APP_VERSION}</span>
+					<span className="dashboard-footer__item">Managed by: AJ Labs</span>
+				</footer>
+				</>
 			)}
 		</div>
 	);

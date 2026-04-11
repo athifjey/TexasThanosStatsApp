@@ -4,8 +4,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Texas Thanos Stats</title>
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://sheets.googleapis.com https://*.googleapis.com; manifest-src 'self'; base-uri 'self'; form-action 'self'">
 	<meta name="theme-color" content="#1a3a2a">
 	<meta name="description" content="Texas Thanos Cricket Club – Team Statistics">
+	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<meta name="apple-mobile-web-app-title" content="Thanos Stats">
@@ -15,16 +17,10 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Racing+Sans+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./out/browser/browser.css">
 </head>
 <body>
 	<div id="root"></div>
 	<script type="module" src="./out/browser/browser.js"></script>
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('./sw.js').catch(() => {});
-			});
-		}
-	</script>
 </body>
 </html>

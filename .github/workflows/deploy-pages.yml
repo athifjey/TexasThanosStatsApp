@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      deploy_message:
+        description: Custom deploy message shown in the app update banner
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -31,7 +36,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate required secrets
+        env:
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
+        run: |
+          if [ -z "$GOOGLE_SHEETS_API_KEY" ]; then
+            echo "Missing required secret: GOOGLE_SHEETS_API_KEY" >&2
+            exit 1
+          fi
+
       - name: Build pages artifact
+        env:
+          DEPLOY_MESSAGE: ${{ github.event.inputs.deploy_message || github.event.head_commit.message || 'A new app build is available.' }}
+          GOOGLE_SHEETS_API_KEY: ${{ secrets.GOOGLE_SHEETS_API_KEY }}
         run: npm run build:pages
 
       - name: Upload artifact

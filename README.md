@@ -26,3 +26,12 @@ This uses TypeScript project references. There are three projects in the `src` d
  - `common` contains code shared between the extension and client.
 
 When you run `watch`, `compile`, or `dev`, we invoke both `tsc` and `webpack` to compile the extension and the client portion of the code.
+
+### Google Sheets API Key
+
+For the Texas Thanos browser build, the Google Sheets API key is injected at build time.
+
+ - Local development: create `.env.local` from `.env.local.example` and set `GOOGLE_SHEETS_API_KEY`.
+ - GitHub Pages CI: set repository secret `GOOGLE_SHEETS_API_KEY`.
+
+Do not commit real keys to source files.

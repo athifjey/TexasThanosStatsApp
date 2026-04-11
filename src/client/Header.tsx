@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export type Page = 'dashboard' | 'batting-summary' | 'player-list' | 'bowling-summary' | 'batting-history' | 'bowling-history';
+export type Page = 'dashboard' | 'team-stats' | 'batting-summary' | 'player-list' | 'bowling-summary' | 'batting-history' | 'bowling-history';
 
 interface HeaderProps {
 	activePage: Page;
@@ -9,6 +9,7 @@ interface HeaderProps {
 
 const NAV_ITEMS: { id: Page; label: string }[] = [
 	{ id: 'dashboard', label: 'Dashboard' },
+	{ id: 'team-stats', label: 'Team Stats' },
 	{ id: 'batting-summary', label: 'Batting Summary' },
 	{ id: 'bowling-summary', label: 'Bowling Summary' },
 	{ id: 'batting-history', label: 'Batting History' },

@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../notebook-renderer-react-sample"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off"
+	}
+}
